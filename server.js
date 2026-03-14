@@ -1,5 +1,5 @@
 const express = require('express')
-const connectToDb = require('./MongoDb/dbconnection')
+const connectToDb = require('./mongoDb/dbconnection')
 const postRouter = require('./Routers/postrouter')
 const cookieParser = require('cookie-parser')
 const authRouter = require('./Routers/authRouter')
