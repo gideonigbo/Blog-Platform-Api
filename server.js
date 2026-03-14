@@ -1,5 +1,4 @@
 const express = require('express')
-const connectToDb = require('./mongoDb/dbconnection')
 const postRouter = require('./Routers/postrouter')
 const cookieParser = require('cookie-parser')
 const authRouter = require('./Routers/authRouter')
@@ -7,10 +6,11 @@ const userRouter = require('./Routers/userrouter')
 const likeRouter = require('./Routers/likeRouter')
 const commentRouter = require('./Routers/commentRouter')
 const otpVerifyRouter = require('./Routers/otpRouter')
+const connectToDb = require('./MongoDb/dbconnection')
 require('dotenv').config()
 
 //Connecting to DB, Invoking the express function/module , initializing the port
-connectToDb()
+connectToDb
 const server = express()
 const port = process.env.PORT || 3000
 
