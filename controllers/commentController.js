@@ -57,7 +57,7 @@ const getCommentByUser = async (req, res) => {
     //Check to confirm if there is a comment in the db.
     if (!comment) {
       return res.status(200).json({
-        mess: "User has ade no comment"
+        mess: "User has added no comment"
       });
     }
     res.status(200).json(comment);

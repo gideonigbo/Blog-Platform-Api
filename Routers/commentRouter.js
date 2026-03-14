@@ -1,6 +1,6 @@
 const express = require('express')
 const authMiddleware = require('../middleware/authMiddleware')
-const { getAllCommentsOnPost, getCommentById, getCommentByUser, deleteComment, createComment, updateComment, createCommentForPost, createCommentForComment } = require('../controllers/commentController')
+const { getAllCommentsOnPost, getCommentById, getCommentByUser, deleteComment, updateComment, createCommentForPost, createCommentForComment } = require('../controllers/commentController')
 
 
 const commentRouter = express.Router()
@@ -15,7 +15,7 @@ commentRouter
 //Get all Coments made on a post, including replies
   .get('/post/:postId/comments', authMiddleware, getAllCommentsOnPost)
 
-//Get all users comments
+//Get a specific comment
   .get('/comments/:id', authMiddleware, getCommentById)
 
 //Get all users comments
@@ -24,10 +24,10 @@ commentRouter
 // //Wrong Route Capture 
 //   .get('/post/', noId)
 
-//Edit/ Update a Post
+//Edit/ Update a comment
   .put('/comments/:id', authMiddleware, updateComment)
 
-//delete a Post
+//delete a comment
   .delete('/comments/:id', authMiddleware, deleteComment)
 
 
