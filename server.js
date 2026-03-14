@@ -10,7 +10,7 @@ const userRouter = require('./Routers/userRouter')
 require('dotenv').config()
 
 //Connecting to DB, Invoking the express function/module , initializing the port
-connectToDb
+connectToDb()
 const server = express()
 const port = process.env.PORT || 3000
 
