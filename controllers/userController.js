@@ -6,7 +6,7 @@ const { generateOtpToken, sendMail } = require('../lib/sendMail')
 //Get All Users
 const allUser = async (req, res) => {
   try {
-    const users = await User.find()
+    const users = await User.find().select("-password")
     if( users.length === 0) return res.status(200).json({message:"No user has been registered, register a user."})
     res.status(200).json({users})
   } catch (err) {
