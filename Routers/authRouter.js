@@ -1,13 +1,16 @@
 const  express = require('express')
-const { signIn, resetRequest, validationPasswordOtp, resetPassword } = require('../controllers/authController')
+const { signIn, resetRequest, validationPasswordOtp, resetPassword, signOut } = require('../controllers/authController')
 
 
 const authRouter = express.Router()
 
 authRouter
 
-//Create a user
+//Login a user
   .post('/user/login', signIn)
+
+ //LogOut a user
+  .post('/user/logOut', signOut) 
 
 //reset a user's password
   .post('/password/resetReq', resetRequest)
