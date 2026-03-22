@@ -10,7 +10,7 @@ authRouter
   .post('/user/login', signIn)
 
  //LogOut a user
-  .post('/user/logOut', signOut) 
+  .post('/user/logout', signOut) 
 
 //reset a user's password
   .post('/password/resetReq', resetRequest)
